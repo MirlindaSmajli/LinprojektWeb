@@ -1,0 +1,454 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    color: rgb(0, 0, 0);
+    background-color: #f5f5f5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+}
+
+p {
+    font-size: 1.125em;
+    margin-bottom: 1.5em;
+    color: rgb(0, 0, 0);
+}
+
+a {
+    font-weight: 500;
+    color: #297eee;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 3;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.fixed {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo img {
+    height: 50px;
+}
+/*Styling for the Menu Button*/
+.menu-icon img {
+    height: 40px;
+    width: 40; /*Adjust the size as needed */
+    cursor: pointer;
+    border-radius: 30%; /* Makes it circular */
+    transition: transform 0.3s ease;
+}
+/* Menu Button Hover Effect */
+.menu-icon img:hover{
+    transform: scale(1.1); /* Slight zoom effect */
+}
+/* Slide-in Menu Styling */
+.nav-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -250px; /* Start off-screen */
+    width: 250px;
+    height: 100%;
+    background:rgba(51, 51, 51, 0.9);
+    transition: right 0.3s ease; /* Smooth slide-in */
+    z-index: 2;
+    padding-top: 60px; /* Adjust based on header height */
+}
+/* Show the menu when triggered */
+.nav-menu.show {
+    right: 0; /* Slide in */
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu ul li {
+    margin: 0.5em 0;
+}
+
+.nav-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 0.5em 1em;
+}
+
+.nav-menu ul li a:hover {
+    background: #444;
+}
+
+/* Video Background Styling */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hero Section Styling */
+#hero {
+    position: relative;
+    height: 100vh;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.overlay-text h1 {
+    font-size: 3em;
+}
+
+.overlay-text p {
+    font-size: 1.2em;
+    margin: 1em 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    background: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Section Styles */
+section {
+    padding: 2em 0;
+    text-align: center;
+}
+
+.services-container, .projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.service-item, .project-item {
+    background: #f4f4f4;
+    padding: 1em;
+    border-radius: 5px;
+    max-width: 300px;
+    text-align: left;
+}
+
+.project-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+    margin-top: 2em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        width: 100%;
+        right: -100%;
+    }
+
+    .nav-menu.show {
+        right: 0;
+    }
+
+    .services-container, .projects-container {
+        flex-direction: column;
+    }
+}
+
+/* History Section Styling */
+#about-history {
+    padding: 2em;
+    background-color: #f9f9f9; /* Light background for contrast */
+    color: #333; /* Dark text for readability */
+    font-family: 'Sans ', serif; /* A classic serif font */
+    line-height: 1.6;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto; /* Center the content */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+#about-history h2 {
+    font-size: 2em;
+    color: #000000; /* Highlight the heading */
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+#about-history p {
+    font-size: 1.125em; /* Slightly larger than normal text */
+    margin-bottom: 1.5em;
+    text-align: justify; /* Justify text for a clean block appearance */
+}
+
+#about-history p:first-letter {
+    font-size: 1.0em; /* Larger first letter */
+    font-weight:normal;
+    float: left;
+    margin-right: 0.1em;
+    color: #000000;
+}
+
+#about-history img {
+    width: 100%;
+    max-width: 1200px; /* Limits the image to 1200px */
+    height: auto;
+    margin-top: 1em;
+    border-radius: 5px;
+}
+
+
+/* About Page Specific Styles */
+.image-wrapper, .video-wrapper {
+    text-align: center;
+    margin: 2em 0;
+}
+
+.image-wrapper img, .video-wrapper video {
+    max-width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.caption {
+    margin-top: 0.5em;
+    font-style: italic;
+    color: #555;
+}
+
+/* Contact Section Styling */
+.contact {
+    padding: 3em;
+    background-color: #e9ecef; /* Light gray background */
+    color: #343a40; /* Dark gray text color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    color: #000000; /* Accent color */
+    margin-bottom: 1em;
+    text-align: center;
+    font-weight: 600;
+}
+
+.contact p {
+    font-size: 1.125em;
+    margin-bottom: 2em;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Contact Info Styling */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+.contact-item {
+    background: #fff; /* White background for contact items */
+    border: 1px solid #dee2e6; /* Light border for separation */
+    border-radius: 8px;
+    padding: 2em;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+    color: #495057; /* Darker text color for headings */
+}
+
+.contact-item p {
+    font-size: 1em;
+    color: #6c757d; /* Lighter text color for details */
+    line-height: 1.5;
+}
+
+.contact-item a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* Project Gallery Styling */
+.project-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding: 100px;
+    flex-wrap: wrap;
+}
+
+.project-gallery img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.project-gallery img:hover {
+    transform: scale(1.0); /* Slightly enlarge image on hover */
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+/* Modal Content Container */
+.modal-content-container {
+    text-align: center; /* Center-aligns text and image within this container */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    max-width: 90%;
+    max-height: 70vh; /* Adjust height to fit within the viewport */
+    display: block;
+    margin: auto;
+    border: 2px solid #fff;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: 10px 0;
+    color: #ccc;
+    font-size: 18px; /* Adjust font size as needed */
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
